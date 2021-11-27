@@ -11,36 +11,64 @@ namespace cse210_batter_csharp
         static void Main(string[] args)
         {
         // Create the cast
-            Dictionary<string, List<Actor>> cast = new Dictionary<string, List<Actor>>();
+        Dictionary<string, List<Actor>> cast = new Dictionary<string, List<Actor>>();
+
+        // cast["movers"] = new List<Actor>();
+
+        // Ship ship = new Ship();
+        // cast["movers"].Add(ship);
+
+        // MoveActorsAction moveActorsAction = new MoveActorsAction();
+        // script["update"].Add(moveActorsAction);        
+
+
+        // ControlActorsAction controlActorsAction = new ControlActorsAction(inputService);
+        // script["input"].Add(controlActorsAction);
+
+
+
+
+        // ShipGenerator generator = new ShipGenerator();
+
+        // // for (int i = 0; i < Constants.NUM_SHIPS; i++)
+        // //     {
+        //         Ship ship = generator.Generate();
+        //         cast["Ships"].Add(ship);
+        //     // }
 
         // Bricks
-            cast["bricks"] = new List<Actor>();
+        //     cast["Ship"] = new List<Actor>();
+        //     Point position = new Point(x,y);
+        //     cast["Ship"].Add(new Ship(position));
+            
+        // cast["Ships"] = new List<Actor>();
+        // Ship ship = new Ship(new Point(400,300));
+        // cast["Ships"].Add(ship);
 
-        // Add Bricks Here
-        // Brick brick = new Brick(new Point(10,10));
-           
-        //    cast["bricks"].Add(brick);
-           for (int y = 5; y < Constants.MAX_Y / 2.5;
-                y += (Constants.BRICK_HEIGHT + Constants.BRICK_SPACE))
-            {
-                for (int x = 5; x < (Constants.MAX_X - 5);
-                    x += (Constants.BRICK_WIDTH + Constants.BRICK_SPACE))
-                {
-                    Point position = new Point(x,y);
-                    cast["bricks"].Add(new Brick(position));
+        cast["ships"] = new List<Actor>();
+        Ship ship = new Ship(new Point(400,300));
+        cast["ships"].Add(ship);
 
-                }
+        // for (int y = 5; y < Constants.MAX_Y / 2.5;
+        //     y += (Constants.SHIP_HEIGHT + Constants.SHIP_SPACE))
+        // {
+        //     for (int x = 0; x < (Constants.MAX_X - 5);
+        //         x += (Constants.SHIP_WIDTH + Constants.SHIP_SPACE))
+        //     {
+        //         Point position = new Point(x,y);
+        //         cast["ships"].Add(new Ship(position));
+        //     }
                 
-            }
+        // }
         
             // The Ball (or balls if desired)
-            cast["balls"] = new List<Actor>();
-            Ball ball = new Ball(new Point(700,500));
+            // cast["balls"] = new List<Actor>();
+            // Ball ball = new Ball(new Point(700,500));
             // cast["balls"].Add(ball()
 
             // The paddle
-            cast["paddle"] = new List<Actor>();
-            Paddle paddle = new Paddle(new Point(700,500));
+            // cast["paddle"] = new List<Actor>();
+            // Paddle paddle = new Paddle(new Point(700,500));
 
             // TODO: Add your paddle here
 
@@ -50,7 +78,7 @@ namespace cse210_batter_csharp
             OutputService outputService = new OutputService();
             InputService inputService = new InputService();
             PhysicsService physicsService = new PhysicsService();
-            AudioService audioService = new AudioService();
+            // AudioService audioService = new AudioService();
 
             script["output"] = new List<Action>();
             script["input"] = new List<Action>();
@@ -63,13 +91,13 @@ namespace cse210_batter_csharp
 
             // Start up the game
             outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Batter", Constants.FRAME_RATE);
-            audioService.StartAudio();
-            audioService.PlaySound(Constants.SOUND_START);
+            // audioService.StartAudio();
+            // audioService.PlaySound(Constants.SOUND_START);
 
             Director theDirector = new Director(cast, script);
             theDirector.Direct();
 
-            audioService.StopAudio();
+            // audioService.StopAudio();
         }
     }
 }
