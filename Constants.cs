@@ -36,7 +36,7 @@ namespace cse210_batter_csharp
 
         public const int ROCK_SPACE = 5;
         public const int ROCK_SPEED = 25;
-        public const int NUM_ROCKS = 12;
+        public const int NUM_ROCKS = 6;
 
              
         // #endregion
