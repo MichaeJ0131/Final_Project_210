@@ -38,8 +38,10 @@ namespace cse210_batter_csharp
 
                 if (Raylib_cs.Raylib.WindowShouldClose())
                 {
-                    _keepPlaying = false;
+                  _keepPlaying = false;
                 }
+
+            
             }
 
             Console.WriteLine("Game over!");
