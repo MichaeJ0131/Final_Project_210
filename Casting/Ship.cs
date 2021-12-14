@@ -15,7 +15,7 @@ namespace cse210_batter_csharp.Casting
         //    int y = Constants.MAX_Y / 2;
            Point position = new Point(x, y);
            SetPosition(position);
-           SetVelocity(new Point(3, 0)); 
+           SetVelocity(new Point(1, 0)); 
            
            
            SetWidth(Constants.SHIP_WIDTH);

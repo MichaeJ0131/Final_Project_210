@@ -49,16 +49,6 @@ namespace cse210_batter_csharp.Casting
             return _width > 0 && _height > 0;
         }
 
-        public string GetText()
-        {
-            return _text;
-        }
-
-        public void SetText(string text)
-        {
-            _text = text;
-        }
-
         public int GetX()
         {
             return _position.GetX();

@@ -14,6 +14,7 @@ namespace cse210_batter_csharp.Casting
            Point position = new Point(x, y);
            SetPosition(position);
            SetVelocity(new Point(14, 28));
+        //    14,28
 
            SetWidth(Constants.PLANET_WIDTH);
            SetHeight(Constants.PLANET_HEIGHT);

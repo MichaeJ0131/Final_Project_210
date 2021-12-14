@@ -14,7 +14,7 @@ namespace cse210_batter_csharp.Casting
             Pizza pizza = new Pizza();
 
             int x = _randomGenerator.Next(500,800);
-            int y = _randomGenerator.Next(200,1800);
+            int y = _randomGenerator.Next(400,1800);
             pizza.SetPosition(new Point(x, y));
 
             return pizza;

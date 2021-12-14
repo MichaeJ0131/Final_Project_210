@@ -18,9 +18,6 @@ namespace cse210_batter_csharp
         Dictionary<string, List<Actor>> cast = new Dictionary<string, List<Actor>>();
 
             cast["environment"] = new List<Actor>();
-            Billboard billboard = new Billboard();
-            cast["environment"].Add(billboard);
-            
             
             
             // STARS STARS STARS STARS STARS STARS STARS STARS STARS STARS STARS STARS
@@ -90,7 +87,7 @@ namespace cse210_batter_csharp
 
             ControlActorsAction controlActorsAction = new ControlActorsAction(inputService);
             script["input"].Add(controlActorsAction);
-             AudioService audioService = new AudioService();
+            AudioService audioService = new AudioService();
 
             // TODO: Add additional actions here to handle the input, move the actors, handle collisions, etc.
 

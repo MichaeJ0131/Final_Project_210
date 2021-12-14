@@ -22,14 +22,12 @@ namespace cse210_batter_csharp.Scripting
 
         public override void Execute(Dictionary<string, List<Actor>> cast)
         {
-            Actor billboard = cast["environment"][0]; // There is only one
+            // Actor billboard = cast["environment"][0]; // There is only one
             Actor ship = cast["movers"][0]; // There is only one
 
             List<Actor> rocks = cast["stationary"];
             List<Actor> planets = cast["stationary1"];
             List<Actor> pizzas = cast["stationary2"];
-
-            billboard.SetText(Constants.DEFAULT_BILLBOARD_MESSAGE);
             AudioService audioService = new AudioService();
 
             foreach (Actor actor in rocks)
@@ -68,9 +66,6 @@ namespace cse210_batter_csharp.Scripting
                     Raylib_cs.Raylib.CloseWindow();
                     Raylib.EndDrawing();
                     break;
-
-                    
-
                 }
 
             }           

@@ -16,7 +16,7 @@ namespace cse210_batter_csharp.Casting
             Rock rock = new Rock();
 
             int x = _randomGenerator.Next(0,2000 );
-            int y = _randomGenerator.Next(0 , 3000);
+            int y = _randomGenerator.Next(0 , Constants.MAX_Y);
             rock.SetPosition(new Point(x, y));
 
             return rock;

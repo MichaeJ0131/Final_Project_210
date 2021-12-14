@@ -28,14 +28,15 @@ namespace cse210_batter_csharp
         public const int ROCK_HEIGHT = 100;
         public const int ROCK_SPACE = 25;
         public const int ROCK_SPEED = 1;
-        public const int NUM_ROCKS = 15;
+        public const int NUM_ROCKS = 20;
         public const int DEFAULT_ROCK_OFFSET = 50;
 
         // SHIP SHIP SHIP SHIP SHIP
         public const string IMAGE_SHIP = "./Assets/Ship.png";
         public const int SHIP_SPACE = 10;
         public const int SHIP_WIDTH = 350;
-        public const int SHIP_HEIGHT = 190;
+        public const int SHIP_HEIGHT = 170;
+        // 190
         public const int SHIP_SPEED = 25;
         public const int SHIP_DX = 8;
         public const int SHIP_DY = SHIP_DX * -1;
