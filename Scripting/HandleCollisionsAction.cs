@@ -5,6 +5,7 @@ using cse210_batter_csharp.Scripting;
 using cse210_batter_csharp.Casting;
 
 
+
 namespace cse210_batter_csharp.Scripting
 {
     /// <summary>
@@ -21,12 +22,15 @@ namespace cse210_batter_csharp.Scripting
 
         public override void Execute(Dictionary<string, List<Actor>> cast)
         {
-            // Actor billboard = cast["environment"][0]; // There is only one
+            Actor billboard = cast["environment"][0]; // There is only one
             Actor ship = cast["movers"][0]; // There is only one
 
-            List<Actor> rocks = cast["stationary"]; // Get all the artifacts
+            List<Actor> rocks = cast["stationary"];
+            List<Actor> planets = cast["stationary1"];
+            List<Actor> pizzas = cast["stationary2"];
 
-            // billboard.SetText(Constants.DEFAULT_BILLBOARD_MESSAGE);
+            billboard.SetText(Constants.DEFAULT_BILLBOARD_MESSAGE);
+            AudioService audioService = new AudioService();
 
             foreach (Actor actor in rocks)
             {
@@ -34,113 +38,44 @@ namespace cse210_batter_csharp.Scripting
                 if (_physicsService.IsCollision(ship, rock))
                 {
                     // Raylib_cs.Raylib.WindowShouldClose();
+                    audioService.PlaySound(Constants.SOUND_OVER);
                     Raylib_cs.Raylib.CloseWindow();
                     Raylib.EndDrawing();
+                    break;
 
                 }
             }
+            
+            foreach (Actor actor in planets)
+            {  
+                Planet planet = (Planet)actor;
+                if (_physicsService.IsCollision(ship, planet))
+                {
+                    audioService.PlaySound(Constants.SOUND_OVER);
+                    // audioService.PlaySound(Constants.PLANETC);
+                    Raylib_cs.Raylib.CloseWindow();
+                    Raylib.EndDrawing();
+                    break;     
+                        
+                }
+            }
+            foreach (Actor actor in pizzas)
+            {  
+                Pizza pizza = (Pizza)actor;
+                if (_physicsService.IsCollision(ship, pizza))
+                {
+                    audioService.PlaySound(Constants.GOOD);
+                    Raylib_cs.Raylib.CloseWindow();
+                    Raylib.EndDrawing();
+                    break;
+
+                    
+
+                }
+
+            }           
+            
         }
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// {
-//     /// <summary>
-//     /// An action to move all actors forward according to their current velocities.
-//     /// </summary>
-//     public class handleCollisionsAction : Action
-//     {
-
-//         public override void Execute(Dictionary<string, List<Actor>> cast)
-//         {
-//             foreach (List<Actor> group in cast.Values)
-//             {
-//                 foreach (Actor actor in group)
-//                 {
-//                     MoveActor(actor);
-
-//                 }
-//             }
-//         }
-        
-//         private void MoveActor(Actor actor)
-//         {
-//             int x = actor.GetX();
-//             int y = actor.GetY();
-
-//             int dx = actor.GetVelocity().GetX();
-//             int dy = actor.GetVelocity().GetY();
-
-//             int newX = (x + dx) % Constants.MAX_X;
-//             int newY = (y + dy) % Constants.MAX_Y;
-
-//             if (newX < 0)
-//             {
-//                 newX = Constants.MAX_X;
-//             }
-
-//             if (newY < 0)
-//             {
-//                 newY = Constants.MAX_Y;
-//             }
-
-//             actor.SetPosition(new Point(newX, newY));
-//         }
-
-//     }
-// }

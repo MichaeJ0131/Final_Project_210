@@ -112,6 +112,7 @@ namespace cse210_batter_csharp.Services
                 color);
         }
 
+
         /// <summary>
         /// Draws a single actor.
         /// </summary>
@@ -152,6 +153,7 @@ namespace cse210_batter_csharp.Services
                 DrawActor(actor);
             }
         }
+        
 
     }
 

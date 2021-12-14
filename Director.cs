@@ -60,6 +60,24 @@ namespace cse210_batter_csharp
                 action.Execute(_cast);
             }
         }
+        // public void StartGame()
+        // {
+
+        //     while (_keepPlaying)
+        //     {
+        //         DoOutputs();
+        //     }
+
+        //     Console.WriteLine("Game over!");
+        // }
+        
+        
+        // ScoreBoard scoreBoard = new ScoreBoard();
+        // public void DoOutputs()
+        // {
+
+        //     OutputService.DrawActor(ScoreBoard);
+        // }
 
     }
 }
