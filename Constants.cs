@@ -28,7 +28,7 @@ namespace cse210_batter_csharp
         public const int ROCK_HEIGHT = 100;
         public const int ROCK_SPACE = 25;
         public const int ROCK_SPEED = 1;
-        public const int NUM_ROCKS = 20;
+        public const int NUM_ROCKS = 14;
         public const int DEFAULT_ROCK_OFFSET = 50;
 
         // SHIP SHIP SHIP SHIP SHIP
